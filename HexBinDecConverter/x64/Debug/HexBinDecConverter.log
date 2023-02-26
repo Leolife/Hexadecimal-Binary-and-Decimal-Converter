@@ -1,0 +1,4 @@
+﻿  HexBinDecConverter.cpp
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(30,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(35,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  HexBinDecConverter.vcxproj -> C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\x64\Debug\HexBinDecConverter.exe
