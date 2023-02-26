@@ -20,13 +20,12 @@ public:
 class decToBin
 {
 private:
-    int n; //exponent of 2 to find the highest power
+    int n = 0; //exponent of 2 to find the highest power
     int highestPower; //highest power of 2 that is lower than the input
     string bin;
 public:
     void decBin(int obj)
     {
-        n = 0;
         while ((highestPower = pow(2, n)) < obj)
             n++;
         while (n >= 0)
@@ -47,6 +46,29 @@ public:
     }
 };
 
+class binToDec
+{
+private:
+    int n = 0; //exponent of 2 to find the highest power
+    int number = 0;
+public:
+    void binDec(string obj)
+    {
+        for (int i = obj.size(); i > 0; i--)
+        {
+            string objCopy;
+            objCopy = obj[i-1];
+            if (objCopy == "1")
+            {
+                number += pow(2, (n));
+            }
+            n++;
+        }
+        cout << "Number: " << number;
+    }
+
+};
+
 
 int main()
 {
@@ -58,7 +80,17 @@ int main()
     cin >> selection;
     cout << endl;
 
-    if (selection == 6)
+    if (selection == 4)
+    {
+        string bin;
+        binToDec a;
+        cout << "Binary: ";
+        cin >> bin;
+        a.binDec(bin);
+        
+    }
+
+    else if (selection == 6)
     {
         int num;
         decToBin a;
