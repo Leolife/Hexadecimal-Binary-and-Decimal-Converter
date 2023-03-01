@@ -1,6 +1,8 @@
 ﻿  HexBinDecConverter.cpp
-C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(29,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(34,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(57,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(63,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(28,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(34,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(53,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(58,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(105,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\HexBinDecConverter\HexBinDecConverter.cpp(110,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   HexBinDecConverter.vcxproj -> C:\Users\leoro\OneDrive\Desktop\C++_Practice\HexBinDecConverter\x64\Debug\HexBinDecConverter.exe

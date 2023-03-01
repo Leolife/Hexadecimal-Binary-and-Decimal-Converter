@@ -17,11 +17,87 @@ public:
     }
 };
 
+class binToDec
+{
+private:
+    int n = 0; //exponent of 2 to find the highest power
+    int number = 0;
+public:
+    void binDec(string obj)
+    {
+        for (int i = obj.size(); i > 0; i--)
+        {
+            string objCopy;
+            objCopy = obj[i - 1];
+            if (objCopy == "1")
+            {
+                number += pow(2, (n));
+            }
+            n++;
+        }
+        cout << "Number: " << number;
+    }
+
+};
+
+class decToHex
+{
+private:
+    int n = 0; //exponent of 16 to find the highest power
+    int highestPower; //highest power of 16 that is less than the obj
+    int remainder;
+    int quotientWholeNumber;
+public:
+    void decHex(int obj)
+    {
+        while ((highestPower = pow(16, n)) < obj)
+            n++;
+        while (n > 0)
+        {
+            n--; // 1
+            highestPower = pow(16, n); // 16
+            remainder = obj % highestPower; // 8
+            quotientWholeNumber = obj / highestPower; // 14
+            if (quotientWholeNumber > 0 && quotientWholeNumber <= 9)
+            {
+                cout << quotientWholeNumber;
+            }
+            switch (quotientWholeNumber)
+            {
+            case 10:
+                cout << "A";
+                break;
+            case 11:
+                cout << "B";
+                break;
+            case 12:
+                cout << "C";
+                break;
+            case 13:
+                cout << "D";
+                break;
+            case 14:
+                cout << "E";
+                break;
+            case 15:
+                cout << "F";
+                break;
+            }
+            if (remainder < 16)
+            {
+                cout << remainder;
+                break;
+            }
+            obj = remainder;
+        }
+    }
+};
+
 class decToBin
 {
 private:
     int n = 0; //exponent of 2 to find the highest power
-    int highestPower; //highest power of 2 that is lower than the input
+    int highestPower; //highest power of 2 that is less than the input
     string bin;
 public:
     void decBin(int obj)
@@ -46,29 +122,6 @@ public:
     }
 };
 
-class binToDec
-{
-private:
-    int n = 0; //exponent of 2 to find the highest power
-    int number = 0;
-public:
-    void binDec(string obj)
-    {
-        for (int i = obj.size(); i > 0; i--)
-        {
-            string objCopy;
-            objCopy = obj[i-1];
-            if (objCopy == "1")
-            {
-                number += pow(2, (n));
-            }
-            n++;
-        }
-        cout << "Number: " << number;
-    }
-
-};
-
 
 int main()
 {
@@ -87,9 +140,17 @@ int main()
         cout << "Binary: ";
         cin >> bin;
         a.binDec(bin);
-        
-    }
 
+    }
+    else if (selection == 5)
+    {
+        int num;
+        decToHex a;
+        cout << "Number: ";
+        cin >> num;
+        cout << "Hexadecimal: ";
+        a.decHex(num);
+    }
     else if (selection == 6)
     {
         int num;
