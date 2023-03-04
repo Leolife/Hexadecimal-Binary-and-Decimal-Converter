@@ -17,6 +17,79 @@ public:
     }
 };
 
+class hexToBin
+{
+private:
+    string bin;
+    string currentBin;
+    int numObj;
+    int n = 0; //exponent for power of 2 in regards to binary
+    int highestPower; //highest power of 2 that is less than the obj
+public:
+    void hexBin(string obj)
+    {
+        for (int i = 0; i <= obj.size(); i++)
+        {
+            if (obj[i] == '1' || obj[i] == '2' || obj[i] == '3' || obj[i] == '4' || obj[i] == '5' || obj[i] == '6' || obj[i] == '7' || obj[i] == '8' || obj[i] == '9')
+            {
+                currentBin = "";
+                numObj = obj[i] - '0';
+                while ((highestPower = pow(2, n)) < numObj)
+                    n++;
+                while (n >= 0)
+                {
+                    if (highestPower = pow(2, n) > numObj)
+                        n--;
+                    highestPower = pow(2, n);
+                    if (highestPower > numObj)
+                    {
+                        if (currentBin.size() < 4)
+                        {
+                            currentBin += "0";
+                        }
+                    }
+                    else if (highestPower <= numObj && numObj >= 1)
+                    {
+                        if (currentBin.size() < 4)
+                        {
+                            currentBin += "1";
+                        }
+                        numObj -= highestPower;
+                    }
+                }
+                for (int j = currentBin.size(); j < 4; j++)
+                {
+                    currentBin = '0' + currentBin;
+                }
+                bin += currentBin;
+            }
+            switch (obj[i])
+            {
+            case 'A':
+                bin += "1010";
+                break;
+            case 'B':
+                bin += "1011";
+                break;
+            case 'C':
+                bin += "1100";
+                break;
+            case 'D':
+                bin += "1101";
+                break;
+            case 'E':
+                bin += "1110";
+                break;
+            case 'F':
+                bin += "1111";
+                break;
+            }
+        }
+        cout << "Binary: " << bin;
+    }
+
+};
+
 class binToHex
 {
 private:
@@ -184,7 +257,16 @@ int main()
     cout << "\n" << setw(24) << "Select conversion: ";
     cin >> selection;
     cout << endl;
-    if (selection == 3)
+
+    if (selection == 1)
+    {
+        string hex;
+        hexToBin a;
+        cout << "Hexadecimal: ";
+        cin >> hex;
+        a.hexBin(hex);
+    }
+    else if (selection == 3)
     {
         string bin;
         binToHex a;
