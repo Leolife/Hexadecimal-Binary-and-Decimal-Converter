@@ -13,7 +13,60 @@ public:
         cout << setw(25) << setfill('-') << "MENU" << setw(21) << "-" << setfill('-') << endl;
         cout << "       " << setw(25) << setfill('-') << "Select Conversion" << setw(7) << "-" << "       " << setfill(' ');
         cout << "\n" << setw(20) << "1) Hex to Bin" << "\n" << setw(20) << "2) Hex to Dec" << "\n" << setw(20) << "3) Bin to Hex" 
-            << "\n" << setw(20) << "4) Bin to Dec" << "\n" << setw(20) << "5) Dec to Hex" << "\n" << setw(20) << "6) Dec to Bin" <<endl;
+            << "\n" << setw(20) << "4) Bin to Dec" << "\n" << setw(20) << "5) Dec to Hex" << "\n" << setw(20) << "6) Dec to Bin" << endl;
+    }
+};
+
+class binToHex
+{
+private:
+    int hexNum = 0;
+    string hexStr;
+    int binaryDecimal = 0;
+    int n = 0; //exponent for purposes of converting
+public:
+    void binHex(string obj)
+    {
+        for (int i = (obj.size() - 1); i >= 0; i--)
+        {
+            binaryDecimal = obj[i] - '0'; //converts the binary string into an int variable
+            hexNum += binaryDecimal * pow(2, n);
+            n++;
+            if (n == 4)
+            {
+                if (hexNum >= 1 && hexNum <= 9)
+                {
+                    hexStr += hexNum + '0';
+                }
+                switch (hexNum)
+                {
+                case 10:
+                    hexStr += "A";
+                    break;
+                case 11:
+                    hexStr += "B";
+                    break;
+                case 12:
+                    hexStr += "C";
+                    break;
+                case 13:
+                    hexStr += "D";
+                    break;
+                case 14:
+                    hexStr += "E";
+                    break;
+                case 15:
+                    hexStr += "F";
+                    break;
+                }
+                hexNum = 0;
+                n = 0;
+            }
+        }
+        for (int i = hexStr.size(); i >= 0; i--) //Because the current hexadecimal string will print backwards, this reverses it to print correctly
+        {
+            cout << hexStr[i];
+        }
     }
 };
 
@@ -122,7 +175,6 @@ public:
     }
 };
 
-
 int main()
 {
     menu menu;
@@ -132,8 +184,16 @@ int main()
     cout << "\n" << setw(24) << "Select conversion: ";
     cin >> selection;
     cout << endl;
-
-    if (selection == 4)
+    if (selection == 3)
+    {
+        string bin;
+        binToHex a;
+        cout << "Binary (In increments of 4 bits): ";
+        cin >> bin;
+        cout << "Hexadecimal: ";
+        a.binHex(bin);
+    }
+    else if (selection == 4)
     {
         string bin;
         binToDec a;
