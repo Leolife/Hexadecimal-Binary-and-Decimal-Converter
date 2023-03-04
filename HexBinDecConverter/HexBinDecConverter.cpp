@@ -17,6 +17,54 @@ public:
     }
 };
 
+class hexToDec
+{
+private:
+    int numObj;
+    int decimal = 0;
+    int n = 0; //exponent of 16 for calculations
+    int power; //power of 16 for caluclations
+public:
+    void hexDec(string obj)
+    {
+        for (int i = (obj.size() - 1); i >= 0; i--)
+        {
+            if (obj[i] == '1' || obj[i] == '2' || obj[i] == '3' || obj[i] == '4' || obj[i] == '5' || obj[i] == '6' || obj[i] == '7' || obj[i] == '8' || obj[i] == '9')
+            {
+                numObj = obj[i] - '0';
+            }
+            else if (obj[i] == 'A')
+            {
+                numObj = 10;
+            }
+            else if (obj[i] == 'B')
+            {
+                numObj = 11;
+            }
+            else if (obj[i] == 'C')
+            {
+                numObj = 12;
+            }
+            else if (obj[i] == 'D')
+            {
+                numObj = 13;
+            }
+            else if (obj[i] == 'E')
+            {
+                numObj = 14;
+            }
+            else if (obj[i] == 'F')
+            {
+                numObj = 15;
+            }
+            power = pow(16, n);
+            decimal += (numObj * power);
+            n++;
+        }
+        cout << "Number: " << decimal;
+    }
+};
+
 class hexToBin
 {
 private:
@@ -180,10 +228,10 @@ public:
             n++;
         while (n > 0)
         {
-            n--; // 1
-            highestPower = pow(16, n); // 16
-            remainder = obj % highestPower; // 8
-            quotientWholeNumber = obj / highestPower; // 14
+            n--;
+            highestPower = pow(16, n);
+            remainder = obj % highestPower;
+            quotientWholeNumber = obj / highestPower;
             if (quotientWholeNumber > 0 && quotientWholeNumber <= 9)
             {
                 cout << quotientWholeNumber;
@@ -265,6 +313,14 @@ int main()
         cout << "Hexadecimal: ";
         cin >> hex;
         a.hexBin(hex);
+    }
+    else if (selection == 2)
+    {
+        string hex;
+        hexToDec a;
+        cout << "Hexadecimal: ";
+        cin >> hex;
+        a.hexDec(hex);
     }
     else if (selection == 3)
     {
