@@ -8,6 +8,7 @@ This program displays a menu to choose a conversion. The conversions include:
 - decimal to hexadecimal
 - decimal to binary
 
+## Screenshots of all Outputs
 ![image](https://user-images.githubusercontent.com/95724102/222927581-51e98a61-f3a0-469f-8f92-cab550c5f733.png)
 ![image](https://user-images.githubusercontent.com/95724102/222929349-6e0ceee9-6751-4861-bdbc-1437f13f348f.png)
 ![image](https://user-images.githubusercontent.com/95724102/222860608-c1a7b9f3-373d-4be1-aff0-b9b034bef4c7.png)
